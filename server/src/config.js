@@ -13,6 +13,7 @@ const configSchema = z.object({
   DB_USER: z.string().default("root"),
   DB_PASSWORD: z.string().default(""),
   DB_NAME: z.string().default("quickbite_revamped"),
+  DB_SSL: z.enum(["true", "false"]).default("false").transform((value) => value === "true"),
 });
 
 export const config = configSchema.parse(process.env);

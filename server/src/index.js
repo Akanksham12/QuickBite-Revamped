@@ -2,8 +2,8 @@ import { app } from "./app.js";
 import { config } from "./config.js";
 import { pool } from "./db.js";
 
-const server = app.listen(config.PORT, "127.0.0.1", () => {
-  console.log(`QuickBite API listening at http://127.0.0.1:${config.PORT}`);
+const server = app.listen(config.PORT, "0.0.0.0", () => {
+  console.log(`QuickBite API listening on port ${config.PORT}`);
 });
 
 async function shutdown(signal) {
