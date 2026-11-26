@@ -69,3 +69,7 @@ npm test
 ```
 
 The app intentionally does not reuse the original app's database or credentials. Create the new database separately.
+
+## Hosting
+
+The Express server binds to `0.0.0.0` and uses the `PORT` environment variable, as required by most hosting providers. For a hosted MySQL-compatible database that requires TLS, set `DB_SSL=true`; it defaults to `false` so local MariaDB can run without TLS. Set database credentials and `JWT_SECRET` as environment variables in the hosting provider rather than committing them.
